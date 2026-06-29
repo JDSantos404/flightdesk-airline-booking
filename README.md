@@ -1,7 +1,7 @@
 # Technical Specifications Document
 
 ## 1. Title Page
-| **Project Name** | **AirRoute - Airline Booking System** |
+| **Project Name** | **FlightDesk - Airline Booking System** |
 | :--- | :--- |
 | **Version** | 1.0 |
 | **Date** | June 21, 2026 |
