@@ -18,7 +18,7 @@ module.exports.createAccessToken = (user) => {
 
 module.exports.verify = (req, res, next) => {
 
-	console.log(req.headers.authorization);
+	// console.log(req.headers.authorization);
 
 	let token = req.headers.authorization;
 
@@ -26,7 +26,7 @@ module.exports.verify = (req, res, next) => {
 		return res.send({ auth: "Failed. No Token"});
 	} else {
 		token = token.slice(7, token.length);
-		console.log(token);
+		// console.log(token);
 
 		jwt.verify(token, process.env.JWT_SECRET_KEY, function(err, decodedToken) {
 
@@ -37,7 +37,7 @@ module.exports.verify = (req, res, next) => {
 				});
 
 			} else {
-				console.log("result from verify method " + decodedToken);
+				// console.log("result from verify method " + decodedToken);
 				req.user = decodedToken;
 
 				next();

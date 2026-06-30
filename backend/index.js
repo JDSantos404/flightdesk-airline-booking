@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const userRoutes = require("./routes/user");
+
 
 // Environment setup
 require('dotenv').config();
@@ -21,9 +23,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // Database Connection
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
+
+
+app.use("/users", userRoutes);
 
 
 

@@ -212,10 +212,10 @@
 
 ## 9. Data Requirements
 - **Data Models**: 
-    - **Users** (User): PK: `userId` | Attributes: `name`, `email`, `password`, `isAdmin` (Boolean).
-    - **Flights** (Flight): PK: `flightId` | Attributes: `origin`, `destination`, `departureTime`, `arrivalTime`, `price`.
-    - **Seats** (Seat): PK: `seatId` | Attributes: `seatNumber`, `status` | FK: `flightId`.
-    - **Bookings** (Booking): PK: `bookingId` | Attributes: `bookingDate`, `status` | FKs: `userId`, `flightId`, `seatId`.
+    - **Users** (User): PK: `_id` | Attributes: `firstName`, `lastName`, `email`, `password`, `mobileNo`, `isAdmin` (Boolean).
+    - **Flights** (Flight): PK: `_id` | Attributes: `origin`, `destination`, `departureTime`, `arrivalTime`, `price`.
+    - **Seats** (Seat): PK: `_id` | Attributes: `seatNumber`, `status` | FK: `flightId` (ref: Flight).
+    - **Bookings** (Booking): PK: `_id` | Attributes: `bookingDate`, `status` | FKs: `userId` (ref: User), `flightId` (ref: Flight), `seatId` (ref: Seat).
     
 - **Database Requirements**: 
     - User 1 — * Booking
