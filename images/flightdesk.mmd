@@ -1,0 +1,41 @@
+erDiagram
+    USERS {
+        ObjectId _id PK
+        String firstName
+        String lastName
+        String email
+        String password
+        String mobileNo
+        Boolean isAdmin
+    }
+
+    FLIGHTS {
+        ObjectId _id PK
+        String origin
+        String destination
+        DateTime departureTime
+        DateTime arrivalTime
+        Number price
+    }
+
+    SEATS {
+        ObjectId _id PK
+        ObjectId flightId FK
+        String seatNumber
+        String status
+    }
+
+    BOOKINGS {
+        ObjectId _id PK
+        ObjectId userId FK
+        ObjectId flightId FK
+        ObjectId seatId FK
+        DateTime bookingDate
+        String status
+    }
+
+    %% Relationships with descriptive labels %%
+    USERS ||--o{ BOOKINGS : "places"
+    FLIGHTS ||--o{ SEATS : "contains"
+    FLIGHTS ||--o{ BOOKINGS : "includes"
+    SEATS ||--o{ BOOKINGS : "assigned_to"

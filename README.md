@@ -230,7 +230,7 @@
     - **Booking Transactions:** New reservations are inserted into the `Booking` collection only after validating real-time seat availability, followed by an immediate update to the associated `Seat.status`.
     - **Admin Authorization:** The system actively verifies `User.isAdmin === true` before executing queries to retrieve platform-wide dashboard metrics.
 
-- **ERD**: ![AirRoute³ - ERD](./images/Blank%20diagram%20-%20Page%201%20AirRoute³%20ERD.png)
+- **ERD**: ![FlightDesk - ERD](./images/flight_booking_system_erd.png)
 
 ## 10. External Interface Requirements
 - **User Interfaces**: 
